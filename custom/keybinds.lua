@@ -47,11 +47,15 @@ hl.bind("CTRL + " .. mainMod .. " + Down",
 for i = 1, 10 do
     local code = ({10,11,12,13,14,15,16,17,18,19})[i]
 
+    -- Focus workspace
     hl.bind(mainMod .. " + code:" .. code,
-        hl.dsp.exec_cmd("$HOME/.config/hypr/hyprland/scripts/workspace_action.sh workspace " .. i))
+        hl.dsp.focus({ workspace = i }))
 
+    -- Move window without following (movetoworkspacesilent behavior)
     hl.bind(mainMod .. " + SHIFT + code:" .. code,
-        hl.dsp.exec_cmd("$HOME/.config/hypr/hyprland/scripts/workspace_action.sh movetoworkspacesilent " .. i))
+        hl.dsp.window.move({
+            workspace = i,
+        }))
 end
 
 -- Screenshots
@@ -63,6 +67,10 @@ hl.bind(mainMod .. " + F11",
 -- Zoom (uses Quickshell IPC instead of built-in Lua zoom)
 hl.bind(mainMod .. " + Minus",
     hl.dsp.exec_cmd("qs -c $qsConfig ipc call zoom zoomOut"),
+    { repeating = true })
+
+hl.bind(mainMod .. " + T",
+    hl.dsp.exec_cmd("teams-for-linux"),
     { repeating = true })
 
 hl.bind(mainMod .. " + Equal",
