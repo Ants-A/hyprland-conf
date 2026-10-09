@@ -1,0 +1,8 @@
+require("general")
+require("input")
+require("gestures")
+require("startup")
+require("rules")
+require("binds")
+require("animations")
+require("theme")
