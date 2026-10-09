@@ -19,6 +19,7 @@ bind("SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 bind("M", hl.dsp.window.fullscreen({ action = "toggle" }))
 bind("ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 bind("SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
+bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
 
 for key, command in pairs({
     Return = "kitty",
@@ -60,6 +61,7 @@ for key, command in pairs({
     ["XF86AudioMicMute"] = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     ["XF86MonBrightnessUp"] = "brightnessctl --class=backlight set +10% && qs ipc call brightness trigger",
     ["XF86MonBrightnessDown"] = "brightnessctl --class=backlight set 10%- && qs ipc call brightness trigger",
+    ["Print"] = "hyprshot -m region --clipboard-only",
 }) do
     hl.bind(key, exec(command), { locked = true, repeating = true })
 end
