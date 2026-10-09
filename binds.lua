@@ -21,12 +21,14 @@ bind("ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 bind("SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
 
+hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("qs ipc call lock lock"))
+
 for key, command in pairs({
     Return = "kitty",
     ["SHIFT + Return"] = "kitty --title fl_term",
     ["SHIFT + T"] = "kitty --title fl_term tmux new-session -A -s main",
     E = "nautilus",
-    B = "brave",
+    B = "brave --ozone-platform=wayland --force-device-scale-factor=1.5",
     D = "vesktop",
     G = "godot-mono",
     H = "github-desktop",
