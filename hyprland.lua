@@ -37,4 +37,15 @@ local function compact()
   compacting = false
 end
 
-hl.on("workspace.active", function() pcall(compact) end)
+-- Register listeners for all relevant workspace and window events
+local events = {
+  "workspace.active",
+  "workspace.created",
+  "workspace.removed",
+}
+
+for _, event in ipairs(events) do
+  hl.on(event, function()
+    pcall(compact)
+  end)
+end

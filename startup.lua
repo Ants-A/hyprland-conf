@@ -9,6 +9,7 @@ local commands = {
     "systemctl --user import-environment XDG_MENU_PREFIX && kbuildsycoca6",
     "wl-paste --type text --watch cliphist store",
     "wl-paste --type image --watch cliphist store",
+    "hyprpm enable scrolloverview",
 }
 
 hl.on("hyprland.start", function()
