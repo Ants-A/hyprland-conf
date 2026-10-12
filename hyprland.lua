@@ -42,6 +42,9 @@ local events = {
   "workspace.active",
   "workspace.created",
   "workspace.removed",
+  "window.close",
+  "window.destroy",
+  "window.open"
 }
 
 for _, event in ipairs(events) do
