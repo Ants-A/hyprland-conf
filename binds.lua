@@ -20,6 +20,7 @@ bind("M", hl.dsp.window.fullscreen({ action = "toggle" }))
 bind("ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 bind("SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
+bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
 
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("qs ipc call lock lock"))
 
