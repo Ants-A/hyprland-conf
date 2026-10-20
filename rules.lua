@@ -20,6 +20,18 @@ hl.window_rule({
 hl.window_rule({ name = "rounded-windows", match = { class = ".*" }, rounding = 12 })
 hl.window_rule({ name = "stationary-wallpaper", match = { class = "^(awww-daemon)$" }, no_shadow = true })
 
+hl.window_rule({
+  name = "nmtui-float",
+  match = { class = "^nmtui-float$" },
+  float = true,
+  size = { "monitor_w * 0.5", "monitor_h * 0.6" },
+  center = true,
+})
+hl.workspace_rule({
+  workspace = "special:nmtui",
+  on_created_empty = "kitty --class nmtui-float -e nmtui",
+})
+
 hl.config({
   decoration = {
     blur = { enabled = true, size = 3, passes = 2 },

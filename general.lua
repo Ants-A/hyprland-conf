@@ -18,7 +18,7 @@ hl.monitor({ output = "eDP-2", mode = "2560x1600@239.998993", position = "2560x0
 
 hl.config({
     general = {
-        gaps_in = 20,
+        gaps_in = 10,
         gaps_out = 20,
         border_size = 2,
         layout = "scrolling",
@@ -38,7 +38,7 @@ hl.config({
             offset = "0 0",
             color = 0xcc000000,
         },
-        blur = { enabled = false },
+        blur = { enabled = true },
     },
     cursor = { no_hardware_cursors = false },
     misc = {
@@ -48,7 +48,7 @@ hl.config({
     },
     scrolling = {
         fullscreen_on_one_column = true,
-        column_width = 0.6,
+        column_width = 0.5,
         direction = "right",
         focus_fit_method = 1,
         follow_focus = true,
