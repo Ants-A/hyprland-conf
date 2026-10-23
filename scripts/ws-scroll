@@ -26,4 +26,7 @@ else
   [ -z "$target" ] && exit 0
 fi
 
+if [ "$2" = "move" ]; then
+  hyprctl dispatch "hl.dsp.window.move({ workspace = $target })"
+fi
 hyprctl dispatch "hl.dsp.focus({ workspace = $target })"
