@@ -21,12 +21,14 @@ bind("ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 bind("SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
 bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
 bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
+bind("mouse:272", hl.dsp.window.drag(), { mouse = true })
+bind("mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("qs ipc call lock lock"))
 
 -- Ctrl + scroll: switch workspaces (up/down)
-hl.bind("CTRL + mouse_down", exec("~/.config/hypr/scripts/ws-scroll next"))
-hl.bind("CTRL + mouse_up",   exec("~/.config/hypr/scripts/ws-scroll prev"))
+hl.bind("ALT + mouse_down", exec("~/.config/hypr/scripts/ws-scroll next"))
+hl.bind("ALT + mouse_up",   exec("~/.config/hypr/scripts/ws-scroll prev"))
 
 -- Shift + scroll: move left/right across columns (scrolling layout)
 hl.bind("SHIFT + mouse_down", focus({ direction = "right" }))
