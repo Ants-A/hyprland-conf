@@ -24,6 +24,14 @@ bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
 
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("qs ipc call lock lock"))
 
+-- Ctrl + scroll: switch workspaces (up/down)
+hl.bind("CTRL + mouse_down", exec("~/.config/hypr/scripts/ws-scroll next"))
+hl.bind("CTRL + mouse_up",   exec("~/.config/hypr/scripts/ws-scroll prev"))
+
+-- Shift + scroll: move left/right across columns (scrolling layout)
+hl.bind("SHIFT + mouse_down", focus({ direction = "right" }))
+hl.bind("SHIFT + mouse_up",   focus({ direction = "left" }))
+
 for key, command in pairs({
     Return = "kitty",
     ["SHIFT + Return"] = "kitty --title fl_term",

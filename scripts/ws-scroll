@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# usage: ws-scroll next|prev
+dir="$1"
+
+mon_json=$(hyprctl monitors -j | jq '.[] | select(.focused)')
+mon=$(jq '.id' <<<"$mon_json")
+active=$(jq '.activeWorkspace.id' <<<"$mon_json")
+all=$(hyprctl workspaces -j)
+
+# workspaces on this monitor that have windows (plus the current one)
+list=$(jq -r --argjson m "$mon" --argjson a "$active" \
+  '[.[] | select(.monitorID==$m and .id>0 and (.windows>0 or .id==$a)) | .id] | sort | .[]' <<<"$all")
+
+if [ "$dir" = "next" ]; then
+  target=$(awk -v a="$active" '$1>a {print; exit}' <<<"$list")
+  if [ -z "$target" ]; then
+    # at the last workspace: only make a new one if this one isn't empty
+    wins=$(jq --argjson a "$active" '.[] | select(.id==$a) | .windows' <<<"$all")
+    [ "${wins:-0}" -eq 0 ] && exit 0
+    used=$(jq -r '.[].id' <<<"$all")
+    target=1
+    while grep -qx "$target" <<<"$used"; do target=$((target+1)); done
+  fi
+else
+  target=$(awk -v a="$active" '$1<a {l=$1} END{print l}' <<<"$list")
+  [ -z "$target" ] && exit 0
+fi
+
+hyprctl dispatch "hl.dsp.focus({ workspace = $target })"
