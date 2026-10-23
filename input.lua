@@ -13,5 +13,8 @@ hl.config({
             clickfinger_behavior = true,
             disable_while_typing = true,
         },
+
+        -- button remapping
+        kb_options = "caps:escape"
     },
 })

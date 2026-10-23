@@ -14,7 +14,6 @@ for name, value in pairs({
 end
 
 hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "0x0", scale = 1 })
-hl.monitor({ output = "eDP-2", mode = "2560x1600@239.998993", position = "2560x0", scale = 1, vrr = 1 })
 
 hl.config({
     general = {
