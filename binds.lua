@@ -77,7 +77,7 @@ for key, command in pairs({
     ["XF86AudioMicMute"] = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
     ["XF86MonBrightnessUp"] = "brightnessctl --class=backlight set +10% && qs ipc call brightness trigger",
     ["XF86MonBrightnessDown"] = "brightnessctl --class=backlight set 10%- && qs ipc call brightness trigger",
-    ["Print"] = "hyprshot -m region --clipboard-only",
+    ["Print"] = "hyprshot -m region --freeze --clipboard-only",
 }) do
     hl.bind(key, exec(command), { locked = true, repeating = true })
 end

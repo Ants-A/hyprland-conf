@@ -10,6 +10,7 @@ local commands = {
     "wl-paste --type text --watch cliphist store",
     "wl-paste --type image --watch cliphist store",
     "hyprpm reload -n",
+    "~/.local/bin/wpengine-pick.sh --restore",
 }
 
 hl.on("hyprland.start", function()
