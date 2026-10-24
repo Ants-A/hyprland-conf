@@ -52,3 +52,6 @@ for _, event in ipairs(events) do
     pcall(compact)
   end)
 end
+
+-- hyprmon: managed monitor profile include
+require("hyprmon")
