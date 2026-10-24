@@ -13,8 +13,6 @@ for name, value in pairs({
     hl.env(name, value)
 end
 
-hl.monitor({ output = "eDP-1", mode = "2560x1600@165", position = "0x0", scale = 1 })
-
 hl.config({
     general = {
         gaps_in = 10,
