@@ -11,6 +11,7 @@ local commands = {
     "wl-paste --type image --watch cliphist store",
     "hyprpm reload -n",
     "~/.local/bin/wpengine-pick.sh --restore",
+    "vesktop",
 }
 
 hl.on("hyprland.start", function()

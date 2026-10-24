@@ -34,8 +34,8 @@ hl.bind("SUPER + ALT + mouse_down", exec("~/.config/hypr/scripts/ws-scroll next 
 hl.bind("SUPER + ALT + mouse_up",   exec("~/.config/hypr/scripts/ws-scroll prev move"))
 
 -- Shift + scroll: move left/right across columns (scrolling layout)
-hl.bind("SHIFT + mouse_down", focus({ direction = "right" }))
-hl.bind("SHIFT + mouse_up",   focus({ direction = "left" }))
+hl.bind("SHIFT + mouse_down", hl.dsp.layout("focus l"))
+hl.bind("SHIFT + mouse_up",   hl.dsp.layout("focus r"))
 
 for key, command in pairs({
     Return = "kitty",

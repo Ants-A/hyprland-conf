@@ -18,3 +18,9 @@ hl.config({
         kb_options = "caps:escape"
     },
 })
+
+hl.config({
+  cursor = {
+    no_hardware_cursors = true,
+  },
+})

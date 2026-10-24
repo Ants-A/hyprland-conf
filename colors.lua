@@ -4,17 +4,17 @@ local function c(hex, alpha)
 end
 
 local M = {
-  primary              = "96d5a6",
-  on_primary           = "00391c",
-  primary_container    = "12512e",
-  secondary            = "b6ccb8",
-  tertiary             = "a2ceda",
+  primary              = "c5c0ff",
+  on_primary           = "2d2960",
+  primary_container    = "444078",
+  secondary            = "c7c4dc",
+  tertiary             = "ebb8d0",
   error                = "ffb4ab",
-  surface              = "101510",
-  surface_container    = "1c211c",
-  on_surface           = "dfe4dc",
-  outline              = "8b938a",
-  outline_variant      = "414941",
+  surface              = "131318",
+  surface_container    = "201f25",
+  on_surface           = "e5e1e9",
+  outline              = "928f99",
+  outline_variant      = "47464f",
   shadow               = "000000",
 }
 
