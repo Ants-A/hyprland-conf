@@ -24,6 +24,8 @@ bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
 bind("mouse:272", hl.dsp.window.drag(), { mouse = true })
 bind("mouse:273", hl.dsp.window.resize(), { mouse = true })
 
+hl.bind("ALT + Tab", hl.dsp.focus({ monitor = "+1" }))
+
 hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("qs ipc call lock lock"))
 
 -- switch workspaces (up/down)
