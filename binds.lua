@@ -7,6 +7,7 @@ local function bind(key, action)
     hl.bind(M .. " + " .. key, action)
 end
 
+bind("D", exec("discord"))
 bind("A", exec("vicinae toggle"))
 bind("V", exec("vicinae vicinae://launch/clipboard/history"))
 hl.bind("CTRL + SHIFT + Escape", exec("kitty -1 fish -c btop"))
