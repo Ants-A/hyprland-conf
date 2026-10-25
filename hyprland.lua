@@ -6,6 +6,7 @@ require("rules")
 require("binds")
 require("animations")
 require("theme")
+require("sec-startup")
 
 
 -- Collapsing script
