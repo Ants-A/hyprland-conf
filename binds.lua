@@ -20,7 +20,9 @@ bind("SHIFT + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 bind("M", hl.dsp.window.fullscreen({ action = "toggle" }))
 bind("ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 bind("SHIFT + V", hl.dsp.window.float({ action = "toggle" }))
-bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
+if hl.plugin and hl.plugin.scrolloverview then
+    bind("Tab", hl.plugin.scrolloverview.overview("toggle"))
+end
 bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
 bind("mouse:272", hl.dsp.window.drag(), { mouse = true })
 bind("mouse:273", hl.dsp.window.resize(), { mouse = true })
