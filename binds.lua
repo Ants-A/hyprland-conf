@@ -47,7 +47,7 @@ for key, command in pairs({
     ["SHIFT + Return"] = "kitty --title fl_term",
     ["SHIFT + T"] = "kitty --title fl_term tmux new-session -A -s main",
     E = "nautilus",
-    B = "helium-browser --ozone-platform=wayland --force-device-scale-factor=1.4 --disable-features=WaylandPerSurfaceScale,WaylandUiScale",
+    B = "helium-browser --ozone-platform=wayland --force-device-scale-factor=1.4",
     D = "vesktop",
     G = "godot-mono",
     H = "github-desktop",

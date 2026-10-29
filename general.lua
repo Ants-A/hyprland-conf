@@ -53,4 +53,7 @@ hl.config({
         wrap_swapcol = true,
         explicit_column_widths = "0.33333, 0.5, 0.66667, 0.8, 1.0",
     },
+    render = {
+      cm_auto_hdr = 0,        -- don't auto-switch the monitor to HDR on fullscreen
+    },
 })
