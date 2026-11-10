@@ -4,7 +4,6 @@ hl.config({
         numlock_by_default = true,
         repeat_delay = 250,
         repeat_rate = 50,
-        follow_mouse = 1,
         accel_profile = "flat",
         sensitivity = 0.4,
         touchpad = {

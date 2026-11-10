@@ -83,6 +83,7 @@ for key, command in pairs({
     ["XF86MonBrightnessUp"] = "brightnessctl --class=backlight set +10% && qs ipc call brightness trigger",
     ["XF86MonBrightnessDown"] = "brightnessctl --class=backlight set 10%- && qs ipc call brightness trigger",
     ["Print"] = "hyprshot -m region --freeze --clipboard-only",
+    ["SHIFT + Print"] = "hyprshot -m region --freeze",
 }) do
     hl.bind(key, exec(command), { locked = true, repeating = true })
 end
