@@ -31,6 +31,11 @@ hl.workspace_rule({
   workspace = "special:nmtui",
   on_created_empty = "kitty --class nmtui-float -e nmtui",
 })
+hl.window_rule({
+    name  = "vicinae-stay-focused",
+    match = { class = "vicinae" },
+    stay_focused = true,
+})
 
 hl.config({
   decoration = {
