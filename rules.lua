@@ -39,8 +39,14 @@ hl.window_rule({
 
 hl.config({
   decoration = {
-    blur = { enabled = true, size = 3, passes = 2 },
+    blur = { enabled = true, size = 5, passes = 2 },
   },
+})
+
+hl.window_rule({
+  name = "vscode-translucent",
+  match = { class = "^(com.microsoft.VSCode)$" },
+  opacity = "0.99",
 })
 
 hl.layer_rule({
