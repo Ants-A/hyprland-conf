@@ -10,8 +10,8 @@ end
 bind("D", exec("discord"))
 bind("A", exec("vicinae toggle"))
 bind("V", exec("vicinae vicinae://launch/clipboard/history"))
-hl.bind("CTRL + SHIFT + Escape", exec("kitty -1 fish -c btop"))
 bind("L", exec("qs ipc call lock lock"))
+bind("E", hl.dsp.exec_cmd("kitty zsh -i -c 'yazi'"))
 bind("Escape", exec("qs ipc call notifications toggle"))
 bind("SHIFT + E", exec("hyprctl dispatch 'hl.dsp.exit()'"))
 bind("Q", hl.dsp.window.close())
@@ -26,6 +26,7 @@ end
 bind("SHIFT + F23", exec("qs ipc call notifications toggle"))
 bind("mouse:272", hl.dsp.window.drag(), { mouse = true })
 bind("mouse:273", hl.dsp.window.resize(), { mouse = true })
+bind("mouse:274", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind("ALT + Tab", hl.dsp.focus({ monitor = "+1" }))
 
@@ -46,7 +47,6 @@ for key, command in pairs({
     Return = "kitty",
     ["SHIFT + Return"] = "kitty --title fl_term",
     ["SHIFT + T"] = "kitty --title fl_term tmux new-session -A -s main",
-    E = "nautilus",
     B = "helium-browser --ozone-platform=wayland --force-device-scale-factor=1.4",
     D = "vesktop",
     G = "godot-mono",
