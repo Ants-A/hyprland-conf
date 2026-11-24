@@ -56,3 +56,12 @@ hl.layer_rule({
   xray = false,
   ignore_alpha = 0.3,
 })
+
+hl.layer_rule({
+    name = "vicinae-blur",
+    match = {
+        namespace = "vicinae",
+    },
+    blur = true,
+    ignore_alpha = 0.2,
+})
